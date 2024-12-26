@@ -36,7 +36,7 @@ interface StoreLocationsModalProps {
 const StoreLocationsModal = ({ isOpen, onOpenChange }: StoreLocationsModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="w-[95vw] max-w-[800px] bg-white p-6 rounded-lg shadow-xl border border-[#6D0201]/10">
+      <DialogContent className="w-[95vw] max-w-[800px] bg-white/95 p-6 rounded-lg shadow-xl border border-[#6D0201]/10">
         <DialogHeader>
           <DialogTitle className="text-2xl font-semibold mb-6 text-[#6D0201]">
             Nos Boutiques

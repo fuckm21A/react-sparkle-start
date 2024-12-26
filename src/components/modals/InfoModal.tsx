@@ -16,7 +16,7 @@ interface InfoModalProps {
 const InfoModal = ({ isOpen, onOpenChange, title, content }: InfoModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-white max-w-2xl p-6 rounded-lg shadow-xl border border-[#6D0201]/10">
+      <DialogContent className="bg-white/95 max-w-2xl p-6 rounded-lg shadow-xl border border-[#6D0201]/10">
         <DialogHeader>
           <DialogTitle className="text-2xl font-semibold mb-4 text-[#6D0201]">{title}</DialogTitle>
         </DialogHeader>

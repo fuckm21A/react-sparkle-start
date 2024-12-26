@@ -21,15 +21,19 @@ interface FAQModalProps {
 const FAQModal = ({ isOpen, onOpenChange }: FAQModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl">
+      <DialogContent className="bg-white max-w-2xl p-6 rounded-lg shadow-xl border border-[#6D0201]/10">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-semibold mb-4">Questions Fréquentes</DialogTitle>
+          <DialogTitle className="text-2xl font-semibold mb-4 text-[#6D0201]">Questions Fréquentes</DialogTitle>
         </DialogHeader>
         <Accordion type="single" collapsible className="w-full">
           {faqData.map((item, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left">{item.question}</AccordionTrigger>
-              <AccordionContent>{item.answer}</AccordionContent>
+            <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200">
+              <AccordionTrigger className="text-left text-gray-900 hover:text-[#6D0201] hover:no-underline">
+                {item.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-700">
+                {item.answer}
+              </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

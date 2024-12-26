@@ -36,13 +36,13 @@ interface StoreLocationsModalProps {
 const StoreLocationsModal = ({ isOpen, onOpenChange }: StoreLocationsModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="w-[95vw] max-w-[800px] bg-black/40 backdrop-blur-md border-white/20 p-4 md:p-6 rounded-xl">
+      <DialogContent className="w-[95vw] max-w-[800px] bg-white p-6 rounded-lg shadow-xl border border-[#6D0201]/10">
         <DialogHeader>
-          <DialogTitle className="text-xl md:text-2xl text-white font-['WomanFontBold'] mb-4 md:mb-6">
+          <DialogTitle className="text-2xl font-semibold mb-6 text-[#6D0201]">
             Nos Boutiques
           </DialogTitle>
         </DialogHeader>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {locations.map((location, index) => (
             <a
               key={index}
@@ -57,9 +57,9 @@ const StoreLocationsModal = ({ isOpen, onOpenChange }: StoreLocationsModalProps)
                   alt={location.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-white bg-[#591C1C]/90">
-                  <p className="text-base md:text-lg font-['WomanFontBold'] line-clamp-1">{location.name}</p>
-                  <p className="text-xs md:text-sm mt-1 line-clamp-2">{location.address}</p>
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-black bg-white/90">
+                  <p className="text-lg font-semibold line-clamp-1">{location.name}</p>
+                  <p className="text-sm mt-1 text-gray-600 line-clamp-2">{location.address}</p>
                 </div>
               </div>
             </a>

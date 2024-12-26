@@ -1,45 +1,44 @@
 import { Code, Palette, Zap } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const features = [
   {
-    icon: <Code className="w-6 h-6" />,
-    title: "Modern Development",
-    description: "Built with React, TypeScript, and Tailwind CSS",
+    title: "Fast Development",
+    description: "Quick iterations with hot reload and modern development tools.",
+    icon: <Zap className="w-10 h-10 text-blue-500" />,
   },
   {
-    icon: <Zap className="w-6 h-6" />,
-    title: "Lightning Fast",
-    description: "Optimized for performance and user experience",
-  },
-  {
-    icon: <Palette className="w-6 h-6" />,
     title: "Beautiful Design",
-    description: "Stunning visuals and smooth animations",
+    description: "Stunning UI components and responsive layouts out of the box.",
+    icon: <Palette className="w-10 h-10 text-purple-500" />,
+  },
+  {
+    title: "Clean Code",
+    description: "Well-structured TypeScript code following best practices.",
+    icon: <Code className="w-10 h-10 text-pink-500" />,
   },
 ];
 
-export const Features = () => {
+const Features = () => {
   return (
-    <div className="py-24 bg-white">
-      <div className="container px-4 mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Amazing Features
-        </h2>
+    <div className="py-20 px-4">
+      <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div
-              key={index}
-              className="p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-all"
-            >
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 text-white">
-                {feature.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
-            </div>
+            <Card key={index} className="hover-card">
+              <CardHeader>
+                <div className="mb-4">{feature.icon}</div>
+                <CardTitle>{feature.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">{feature.description}</p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
     </div>
   );
 };
+
+export default Features;

@@ -38,7 +38,7 @@ const ProductSelectionPanel = ({ onItemDrop }: ProductSelectionPanelProps) => {
   };
 
   return (
-    <div className="bg-white/90 backdrop-blur-lg rounded-xl shadow-xl p-6 border border-white/20 h-full">
+    <div className="bg-white/90 backdrop-blur-lg rounded-xl shadow-xl p-6 border border-white/20">
       <div className="space-y-6">
         <div className="relative">
           <Search className="absolute left-3 top-3 text-gray-400" size={20} />
@@ -67,7 +67,7 @@ const ProductSelectionPanel = ({ onItemDrop }: ProductSelectionPanelProps) => {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 gap-4 overflow-y-auto max-h-[calc(100vh-300px)]">
+        <div className="grid grid-cols-2 gap-4">
           {filteredProducts.map((product) => (
             <motion.div
               key={product.id}

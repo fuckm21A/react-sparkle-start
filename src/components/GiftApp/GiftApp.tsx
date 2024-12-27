@@ -31,8 +31,13 @@ const GiftApp = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleItemDrop = (item: Product) => {
-    setSelectedItems((prev) => [...prev, item]);
+  const handleItemDrop = (item: Product, size: string, personalization: string) => {
+    const itemWithDetails = {
+      ...item,
+      size,
+      personalization
+    };
+    setSelectedItems((prev) => [...prev, itemWithDetails]);
     playTickSound();
     toast({
       title: "Article Ajouté! 🎁",
@@ -43,11 +48,6 @@ const GiftApp = () => {
         border: '1px solid #590000',
       },
     });
-  };
-
-  const handleRemoveItem = (index: number) => {
-    setSelectedItems((prev) => prev.filter((_, i) => i !== index));
-    playTickSound();
   };
 
   const handleConfirmPack = async () => {
@@ -105,7 +105,7 @@ const GiftApp = () => {
           </motion.div>
 
           <motion.div 
-            className="lg:col-span-5"
+            className="lg:col-span-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -113,12 +113,11 @@ const GiftApp = () => {
             <GiftBasket3D 
               items={selectedItems}
               onItemDrop={handleItemDrop}
-              onRemoveItem={handleRemoveItem}
             />
           </motion.div>
 
           <motion.div 
-            className="lg:col-span-3"
+            className="lg:col-span-4"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}

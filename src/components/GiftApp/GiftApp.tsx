@@ -45,6 +45,11 @@ const GiftApp = () => {
     });
   };
 
+  const handleRemoveItem = (index: number) => {
+    setSelectedItems((prev) => prev.filter((_, i) => i !== index));
+    playTickSound();
+  };
+
   const handleConfirmPack = async () => {
     setIsLoading(true);
     
@@ -108,6 +113,7 @@ const GiftApp = () => {
             <GiftBasket3D 
               items={selectedItems}
               onItemDrop={handleItemDrop}
+              onRemoveItem={handleRemoveItem}
             />
           </motion.div>
 

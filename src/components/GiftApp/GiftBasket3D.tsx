@@ -13,7 +13,7 @@ import GiftContainer from './containers/GiftContainer';
 
 interface GiftBasket3DProps {
   items: Product[];
-  onItemDrop?: (item: Product, size: string, personalization: string) => void;
+  onItemDrop: (item: Product, size: string, personalization: string) => void;
 }
 
 const GiftBasket3D = ({ items, onItemDrop }: GiftBasket3DProps) => {
@@ -48,33 +48,33 @@ const GiftBasket3D = ({ items, onItemDrop }: GiftBasket3DProps) => {
 
   return (
     <>
-      <div className="grid grid-cols-12 gap-4 h-[600px]">
-        {/* Main container - Takes 8 columns */}
-        <div className="col-span-8">
+      <div className="flex flex-col gap-4 h-[600px]">
+        {/* Main container - Takes full width on top */}
+        <div className="h-[300px]">
           <GiftContainer
             items={container1Items}
             maxItems={2}
             onDrop={handleDrop(0)}
             containerTitle="Pack Principal"
-            className="h-full"
+            className="h-full bg-white/95 backdrop-blur-sm shadow-xl rounded-xl border border-gray-100"
           />
         </div>
         
-        {/* Side containers - Take 4 columns */}
-        <div className="col-span-4 space-y-4">
+        {/* Bottom containers - Two equal columns */}
+        <div className="grid grid-cols-2 gap-4 h-[250px]">
           <GiftContainer
             items={container2Items}
             maxItems={1}
             onDrop={handleDrop(1)}
             containerTitle="Pack Secondaire 1"
-            className="h-[calc(50%-0.5rem)]"
+            className="h-full bg-white/95 backdrop-blur-sm shadow-xl rounded-xl border border-gray-100"
           />
           <GiftContainer
             items={container3Items}
             maxItems={1}
             onDrop={handleDrop(2)}
             containerTitle="Pack Secondaire 2"
-            className="h-[calc(50%-0.5rem)]"
+            className="h-full bg-white/95 backdrop-blur-sm shadow-xl rounded-xl border border-gray-100"
           />
         </div>
       </div>

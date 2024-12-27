@@ -96,7 +96,7 @@ const GiftApp = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <motion.div 
-            className="lg:col-span-4"
+            className="lg:col-span-5"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
@@ -117,7 +117,7 @@ const GiftApp = () => {
           </motion.div>
 
           <motion.div 
-            className="lg:col-span-4"
+            className="lg:col-span-3"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
